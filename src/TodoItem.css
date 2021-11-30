@@ -1,0 +1,67 @@
+.TodoItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-decoration: none;
+  margin: 6px 0;
+  padding: 10px 5px;
+  border-top: 1px solid var(--background05);
+  border-left: 1px solid var(--background05);
+  border-bottom: 2px solid var(--background);
+  border-right: 2px solid var(--background);
+  border-radius: 10px;
+}
+
+.TodoItem:hover {
+  background: var(--primary05);
+  box-shadow: 0 0 10px var(--highlighted),
+  0 0 20px var(--highlighted),
+  0 0 40px var(--highlighted);
+}
+
+.TodoItem .TodoItem__todo {
+  display: flex;
+  align-items: center;
+}
+
+.TodoItem p {
+  margin: 0 5px;
+}
+
+.TodoItem:hover p {
+  color: var(--light);
+}
+
+.TodoItem-p--completed {
+  text-decoration: line-through;
+}
+
+.Icon {
+  position: relative;
+  padding: 10px;
+  cursor: pointer;
+  color: white;
+}
+
+.Icon.Icon-check {
+  color: grey;
+}
+
+.Icon.Icon-check--active {
+  padding: 5px;
+  font-size: 24px;
+  color: yellowgreen;
+  text-shadow: 0 0 20px greenyellow,
+  0 0 40px greenyellow,
+  0 0 80px greenyellow,
+  0 0 160px greenyellow,
+  0 0 320px greenyellow,
+  0 0 400px greenyellow;
+}
+
+.Icon.Icon-delete {
+  color: red;
+}
+
+.fa-check:before {
+}

@@ -1,0 +1,32 @@
+.TodoSearch {
+  position: relative;
+  display: flex;
+  align-self: center;
+}
+
+.TodoSearch input {
+  position: relative;
+  padding: 10px;
+  width: 280px;
+  min-width: 250px;
+  border: none;
+  border-radius: 25px;
+  background: var(--background05);
+  color: white;
+}
+
+.TodoSearch input:hover {
+  background: var(--primary05);
+  box-shadow: 0 0 10px var(--highlighted),
+  0 0 20px var(--highlighted),
+  0 0 40px var(--highlighted);
+}
+
+.TodoSearch i {
+  position: absolute;
+  cursor: pointer;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-53%);
+  color: var(--light);
+}
