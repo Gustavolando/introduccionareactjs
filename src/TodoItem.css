@@ -60,8 +60,11 @@
 }
 
 .Icon.Icon-delete {
-  color: red;
+  color: var(--light);
 }
 
-.fa-check:before {
+.Icon.Icon-delete:hover {
+  color: red;
+  padding: 5px;
+  font-size: 24px;
 }
