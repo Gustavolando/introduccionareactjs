@@ -1,4 +1,5 @@
 import React from "react";
+import { TodoProvider } from "../TodoContext";
 import { AppUI } from "./AppUI";
 
 // const defaultTodos = [
@@ -10,43 +11,12 @@ import { AppUI } from "./AppUI";
 //   { text: 'Pasear a Dala', completed: false },
 // ]
 
+
 function App(props) {
-  const [todos, setTodos] = React.useState(defaultTodos)
-  const [searchValue, setSearchValue] = React.useState('')
-
-  const completedTodos = todos.filter(todo => !!todo.completed).length
-  const totalTodos = todos.length
-  let searchedTodos = []
-  if (!searchValue.length >= 1) {
-    searchedTodos = todos
-  } else {
-    searchedTodos = todos.filter(todo => todo.text.toLowerCase().includes(searchValue.toLowerCase()))
-  }
-
-  const completeTodo = (text) => {
-    const todoIndex = todos.findIndex(todo => todo.text === text)
-    const newTodos = [...todos]
-    newTodos[todoIndex].completed = true
-    setTodos(newTodos)
-  }
-
-  const deleteTodo = (text) => {
-    const todoIndex = todos.findIndex(todo => todo.text === text)
-    const newTodos = [...todos]
-    newTodos.splice(todoIndex, 1)
-    setTodos(newTodos)
-  }
-
   return (
-    <AppUI 
-      totalTodos={totalTodos} 
-      completedTodos={completedTodos}
-      searchValue={searchValue}
-      setSearchValue={setSearchValue}
-      searchedTodos={searchedTodos}
-      completeTodo={completeTodo}
-      deleteTodo={deleteTodo}
-    />
+    <TodoProvider>
+      <AppUI/>
+    </TodoProvider>
   );
 }
 
