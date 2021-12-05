@@ -7,4 +7,5 @@
 
 .TodoCounter span {
   color: var(--light);
+  font-weight: 900;
 }
