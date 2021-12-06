@@ -31,8 +31,12 @@ const TodoForm = () => {
   }
   const onSubmit = (event) => {
     event.preventDefault()
-    addTodo(newTodoValue)
-    setOpenModal(false)
+    if (newTodoValue.length > 0) {
+      addTodo(newTodoValue)
+      setOpenModal(false)
+    } else {
+      textareaRef.current.focus()
+    }
   }
   return (
     <form 
