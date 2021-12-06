@@ -44,7 +44,6 @@ function AppUI() {
         {(allCompleted && !!searchedTodos.length) && (
           <AllCompleted />
         )}
-
         {searchedTodos.map(todo => (
           <TodoItem 
             key={todo.text} 

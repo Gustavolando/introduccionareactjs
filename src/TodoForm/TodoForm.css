@@ -11,6 +11,7 @@
   box-shadow: 0 0 15px var(--background),
   0 0 30px var(--background),
   0 0 60px var(--background);
+  z-index: 20;
 }
 
 .TodoForm label {

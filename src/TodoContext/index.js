@@ -11,7 +11,7 @@ function TodoProvider(props) {
     error,
     allCompleted
   } = useLocalStorage('TODOS_V1', [])
-
+  
   const [searchValue, setSearchValue] = React.useState('')
   const [openModal, setOpenModal] = React.useState(false)
 
@@ -31,11 +31,24 @@ function TodoProvider(props) {
     saveTodos(newTodos)
   }
   
+  const checkDuplicates = (todoS, text) => {
+    let newText = text
+    let counter = 1
+    let repeatedTodo = todoS.filter(todo => todo.text === text).length
+    while (repeatedTodo > 0) {
+      newText = text + '(' + counter + ')'
+      repeatedTodo = todoS.filter(todo => todo.text === newText).length
+      counter++
+    }
+    return newText
+  }
+
   const addTodo = (text) => {
     const newTodos = [...todos]
+    let finalText = checkDuplicates(newTodos, text)
     newTodos.push({
       completed: false,
-      text,
+      text: finalText,
     })
     saveTodos(newTodos)
   }
