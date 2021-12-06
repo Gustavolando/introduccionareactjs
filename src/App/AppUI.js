@@ -7,6 +7,10 @@ import { CreateTodoButton } from "../CreateTodoButton";
 import { TodoItem } from "../TodoItem";
 import { Modal } from "../Modal"
 import { TodoForm } from "../TodoForm"
+import { TodoLoad } from '../TodoLoad';
+import { TodoError } from '../TodoError'
+import { EmptyTodos } from '../EmptyTodos';
+import { AllCompleted } from '../AllCompleted';
 
 function AppUI() {
   const { 
@@ -16,16 +20,30 @@ function AppUI() {
     completeTodo, 
     deleteTodo,
     openModal,
-    setOpenModal
+    setOpenModal,
+    allCompleted
   } = React.useContext(TodoContext)
   return (
     <React.Fragment>
       <TodoCounter />
       <TodoSearch />
       <TodoList>
-        {error && <p>Desespérate, hubo un error...</p>}
-        {loading && <p>Estamos cargando, no desesperes...</p>}
-        {(!loading && !searchedTodos.length) && <p>¡Crea tu primer TODO!</p>} 
+        {error && (
+          <TodoError />
+        )}
+        {loading && (
+          <>
+            <TodoLoad/>
+            <TodoLoad/>
+            <TodoLoad/>
+          </>
+        )}
+        {(!loading && !searchedTodos.length) && (
+          <EmptyTodos />
+        )} 
+        {(allCompleted && !!searchedTodos.length) && (
+          <AllCompleted />
+        )}
 
         {searchedTodos.map(todo => (
           <TodoItem 

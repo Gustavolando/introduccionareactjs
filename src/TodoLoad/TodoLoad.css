@@ -1,0 +1,10 @@
+svg {
+  margin: 6px 0;
+  padding: 10px 5px;
+  border-top: 1px solid var(--background05);
+  border-left: 1px solid var(--background05);
+  border-bottom: 2px solid var(--background);
+  border-right: 2px solid var(--background);
+  border-radius: 10px;
+  transform: scale(0.9);
+}

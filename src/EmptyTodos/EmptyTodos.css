@@ -1,0 +1,60 @@
+.EmptyTodos {
+  width: 280px;
+  height: 350px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: var(--primary);
+}
+
+.EmptyTodos p {
+  position: relative;
+  text-align: center;
+  font-size: 1.8rem;
+  color: var(white);
+  padding: 0 20px;
+  line-height: 3rem;
+  font-weight: 400;
+}
+
+.EmptyTodos span {
+  color: var(--light);
+  font-weight: 700;
+}
+
+.EmptyTodos .EmptyTodos-icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.EmptyTodos i:nth-child(1) {
+  position: relative;
+  left: 0;
+  top: 0;
+  color: var(--light);
+  font-size: 15rem;
+  transform: scale(1) rotate(0);
+  animation: animateEmpty 4s ease-in-out infinite;
+  margin-bottom: 20px;
+}
+
+.EmptyTodos i:nth-child(2) {
+  position: absolute;
+  top: 85px;
+  color: var(--light);
+  font-size: 13rem;
+}
+
+@keyframes animateEmpty {
+  0% {
+    transform: scale(1) rotate(0);
+  }
+  50% {
+    transform: scale(1.1) rotate(30deg);
+  }
+  100% {
+    transform: scale(1) rotate(0);
+  }
+}

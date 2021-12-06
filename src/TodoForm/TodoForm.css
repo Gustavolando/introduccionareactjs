@@ -25,14 +25,17 @@
 
 .TodoForm textarea {
   width: 280px;
-  height: 18rem;
-  font-size: 1.6rem;
+  height: 9rem;
+  font-size: 1.8rem;
   background: var(--background05);
   padding: 5px 10px;
   margin: 0 5px;
   color: white;
   border: 1px solid var(--highlighted);
   border-radius: 10px;
+  text-align: center;  
+  line-height: 2.2rem;
+  letter-spacing: 1px;
   resize: none;
   box-shadow: 0 0 10px var(--highlighted),
   0 0 20px var(--highlighted),
@@ -40,8 +43,13 @@
 }
 
 .TodoForm textarea::placeholder {
-  color: var(--light);
+  color: var(--light05);
   text-align: center;  
+}
+
+.TodoForm p {
+  margin-top: 15px;
+  align-self: flex-end;
 }
 
 .TodoForm-buttons {
@@ -64,9 +72,11 @@
 .TodoForm-buttons--cancel {
   background: var(--primary05);
   color: white;
+  order: 1;
 }
 
 .TodoForm-buttons--submit {
   background: var(--light);
   color: var(--primary);
+  order: 2;
 }

@@ -1,13 +1,11 @@
 .CreateTodoButton {
   position: sticky;
-  align-self: flex-end;
   border-radius: 50%;
-  margin-bottom: 10px;
-  margin-right: 10vw;
   padding: 15px;
   font-size: 24px;
   color: var(--highlighted);
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.25);
+  transition: 1000ms;
   transform: rotate(0deg);
   cursor: pointer;
   z-index: 10;
@@ -17,10 +15,10 @@
   box-shadow: 0 0 10px var(--highlighted),
   0 0 20px var(--highlighted),
   0 0 40px var(--highlighted);
-  animation: animate 6s linear infinite;
+  animation: animateButton 6s linear infinite;
 }
 
-@keyframes animate {
+@keyframes animateButton {
   0% {
     transform: rotate(0deg);
   }
